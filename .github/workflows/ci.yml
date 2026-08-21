@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Unit tests
+        run: uv run pytest
+
+      - name: Mock smoke test (CLI end-to-end)
+        env:
+          RAGLAB_LLM_PROVIDER: mock
+          RAGLAB_EMBEDDING_PROVIDER: mock
+        run: |
+          uv run raglab ingest examples/data/buaa.md
+          uv run raglab ingest examples/data/rag_basics.md
+          uv run raglab query "北航的校训是什么？"
+          uv run raglab eval-dataset examples/eval_dataset.json --output /tmp/report.md

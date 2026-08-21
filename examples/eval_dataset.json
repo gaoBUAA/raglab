@@ -1,0 +1,34 @@
+{
+  "samples": [
+    {
+      "id": "buaa_founding",
+      "question": "北航是哪一年成立的？",
+      "ground_truth": "1952年",
+      "golden_chunk_ids": ["buaa"]
+    },
+    {
+      "id": "buaa_motto",
+      "question": "北航的校训是什么？",
+      "ground_truth": "德才兼备、知行合一",
+      "golden_chunk_ids": ["buaa"]
+    },
+    {
+      "id": "buaa_campus",
+      "question": "北航有哪些校区？",
+      "ground_truth": "学院路校区和沙河校区",
+      "golden_chunk_ids": ["buaa"]
+    },
+    {
+      "id": "rag_definition",
+      "question": "什么是 RAG？",
+      "ground_truth": "检索增强生成架构",
+      "golden_chunk_ids": ["rag_basics"]
+    },
+    {
+      "id": "rag_metrics",
+      "question": "RAG 系统评测关注哪些指标？",
+      "ground_truth": "检索指标与答案质量指标",
+      "golden_chunk_ids": ["rag_basics"]
+    }
+  ]
+}
