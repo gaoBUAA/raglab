@@ -2,6 +2,8 @@
 
 > Eval-first RAG & Agent lab：混合检索、带引用的生成、LLM 评测，全部代码可读、可测试、可离线运行。
 
+[![CI](https://github.com/gaoBUAA/raglab/actions/workflows/ci.yml/badge.svg)](https://github.com/gaoBUAA/raglab/actions/workflows/ci.yml)
+
 RAGLab 是一个面向 **大模型应用工程师面试** 的完整项目：它把企业级 LLM 平台（如 Bisheng）中最核心的 RAG 流水线、Agent 编排和评测体系，用干净、自包含的代码重新实现。**不依赖任何检索库**——BM25 是手写的，向量检索基于 NumPy，评测指标可离线计算，你可以把每一行代码的原理都讲清楚。
 
 ## 为什么这个项目有竞争力
